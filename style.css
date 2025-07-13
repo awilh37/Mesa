@@ -1,0 +1,28 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    padding: 1rem;
+}
+
+#game-list {
+    width: 200px;
+    border-right: 1px solid #ccc;
+    padding-right: 1rem;
+}
+
+#game-display {
+    flex-grow: 1;
+    padding-left: 1rem;
+}
