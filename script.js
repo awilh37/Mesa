@@ -50,7 +50,7 @@ gameTiles.forEach(tile => {
             <li>Yahz - Room 3</li>
         `;
 
-        popup.style.display = 'flex';
+        popup.style.display = 'block';
     });
 });
 
