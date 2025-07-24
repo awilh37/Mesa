@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Hub - Mesa</title>
+    <link rel="stylesheet" href="colors.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,6 +22,43 @@
             </div>
         </div>
     </main>
+    <div id="game-details-popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2 id="popup-game-name"></h2>
+                <span class="close-popup">&times;</span>
+            </div>
+            <div class="popup-body">
+                <div class="popup-left">
+                    <div class="game-screenshot">
+                        <img id="popup-game-image" src="" alt="Game Screenshot">
+                    </div>
+                    <div class="game-description">
+                        <h3>Description</h3>
+                        <p id="popup-game-description"></p>
+                    </div>
+                    <div class="game-rules">
+                        <h3>Rules</h3>
+                        <p id="popup-game-rules"></p>
+                    </div>
+                </div>
+                <div class="popup-right">
+                    <div class="available-rooms">
+                        <h3>Available Rooms <button class="plus-button">+</button></h3>
+                        <ul id="popup-room-list">
+                            <!-- Room list will be populated here -->
+                        </ul>
+                    </div>
+                    <div class="active-games">
+                        <h3>Active Games</h3>
+                        <ul id="popup-active-games">
+                            <!-- Active games will be populated here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="header.js" type="module"></script>
     <script src="script.js" type="module"></script>
 </body>

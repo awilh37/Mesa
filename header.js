@@ -17,6 +17,7 @@ onAuthStateChanged(auth, (user) => {
                     <span>${user.displayName}</span>
                     <div class="dropdown-content">
                         <a href="#">View Account</a>
+                        <a href="settings.html">Settings</a>
                         <button id="logout-button">Sign Out</button>
                     </div>
                 </div>
