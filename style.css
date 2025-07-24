@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: var(--accent1-color);
 }
 
 /* Login Page */
@@ -17,12 +17,15 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background-color: var(--main-color);
+    color: var(--accent2-color);
+    border: none;
 }
 
 /* Global Header */
 header {
-    background-color: #333;
-    color: white;
+    background-color: var(--main-color);
+    color: var(--accent2-color);
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -30,7 +33,7 @@ header {
 }
 
 header .logo a {
-    color: white;
+    color: var(--accent2-color);
     text-decoration: none;
     font-size: 1.5rem;
 }
@@ -53,7 +56,7 @@ header .profile .dropdown-content {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: white;
+    background-color: var(--accent2-color);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -76,7 +79,7 @@ header .profile .dropdown-content button {
 
 header .profile .dropdown-content a:hover,
 header .profile .dropdown-content button:hover {
-    background-color: #f1f1f1;
+    background-color: var(--accent1-color);
 }
 
 /* Game Hub */
@@ -91,7 +94,7 @@ main {
 }
 
 .game-tile {
-    background-color: #fff;
+    background-color: var(--accent2-color);
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 20px;
@@ -103,4 +106,89 @@ main {
 
 .game-tile:hover {
     transform: scale(1.05);
+}
+
+/* Pop-up */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: var(--accent2-color);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 1000px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.popup-header h2 {
+    margin: 0;
+}
+
+.close-popup {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.popup-body {
+    display: flex;
+    flex-grow: 1;
+}
+
+.popup-left, .popup-right {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 50%;
+}
+
+.popup-left {
+    border-right: 1px solid #ccc;
+}
+
+.popup-left > div {
+    flex: 1;
+    padding: 1rem;
+}
+
+.popup-right > div {
+    flex: 1;
+    padding: 1rem;
+}
+
+.game-screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.available-rooms h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plus-button {
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
 }

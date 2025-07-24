@@ -2,6 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-analytics.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,7 +19,25 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
+
+async function applyUserColors() {
+    const user = auth.currentUser;
+    if (user) {
+        const docRef = doc(db, "users", user.uid, "settings", "colors");
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            const colors = docSnap.data();
+            document.documentElement.style.setProperty('--main-color', colors.main);
+            document.documentElement.style.setProperty('--accent1-color', colors.accent1);
+            document.documentElement.style.setProperty('--accent2-color', colors.accent2);
+        }
+    }
+}
+
+// Apply colors on page load
+applyUserColors();
 
 const loginButton = document.getElementById('login-with-google');
 if (loginButton) {

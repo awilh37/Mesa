@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Mesa</title>
+    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="global-header"></div>
+    <main>
+        <h1>Settings</h1>
+        <div id="color-settings">
+            <h2>Color Scheme</h2>
+            <div id="premade-palettes">
+                <button id="default-palette">Default</button>
+                <button id="dark-palette">Dark Mode</button>
+                <button id="beach-palette">Beach</button>
+            </div>
+            <div id="custom-palette">
+                <h3>Create Your Own</h3>
+                <label for="main-color">Main Color:</label>
+                <input type="color" id="main-color" value="#333333">
+                <label for="accent1-color">Accent 1:</label>
+                <input type="color" id="accent1-color" value="#f0f0f0">
+                <label for="accent2-color">Accent 2:</label>
+                <input type="color" id="accent2-color" value="#ffffff">
+                <button id="save-custom-palette">Save</button>
+            </div>
+        </div>
+    </main>
+    <script src="header.js" type="module"></script>
+    <script src="settings.js" type="module"></script>
+</body>
+</html>
